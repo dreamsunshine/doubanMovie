@@ -1,0 +1,37 @@
+{
+	"name": "doubanMovie",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
+		"tsc": "tsc",
+		"clean": "rimraf build",
+		"build": "yarn  clean && yarn  tsc --",
+		"lint": "tslint src/**/*.ts",
+		"watch": "yarn  build -w",
+		"ios": "yarn  build && concurrently -r \"yarn  watch\" \"react-native run-ios\"",
+		"android": "yarn  build && concurrently -r \"yarn  watch\" \"react-native run-android\""
+	},
+	"dependencies": {
+		"react": "16.3.0-alpha.1",
+		"react-native": "0.54.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^22.2.0",
+		"@types/react": "^16.0.40",
+		"@types/react-native": "^0.52.16",
+		"babel-jest": "22.4.1",
+		"babel-preset-react-native": "4.0.0",
+		"concurrently": "^3.5.1",
+		"jest": "22.4.2",
+		"react-native-cli": "^2.0.1",
+		"react-test-renderer": "16.3.0-alpha.1",
+		"rimraf": "^2.6.2",
+		"tslint": "^5.9.1",
+		"typescript": "^2.7.2"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
